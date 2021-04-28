@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $primary-font;
+	color: $purple;
+	transition: $transition;
+
+	&.darkMode {
+		background-color: $backgroundDark;
+		color: #fff;
+	}
+}
+
+.hidden {
+	display: none;
+}
