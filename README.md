@@ -26,3 +26,5 @@ The challenge was to create an interactive web app to share animated GIFs, imple
 * [FontAwsome](https://fontawesome.com/)
 * [Giphy API](https://developers.giphy.com/)
 * [RecordRTC](https://recordrtc.org/)
+
+
