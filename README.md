@@ -1,25 +1,25 @@
 # GIFOS
+_________________________
 
-### Aplicación web interactiva para compartir GIFs animados
+### Interactive Web App to share animated GIFS.
 <br>
 
-[Link a la demo](https://gifos-agostina.netlify.app/)
+[Demo Link](https://gifos-agostina.netlify.app/)
 
-#### Trabajo práctico cierre de bloque de Acámica.
+#### End project from Javascript Unit.
 
-* Bloque 2: Javacript
-* Carrera: Desarrollo Web Frontend con React
+* Unit 2: Javacript
+* Degree: Full Stack Development @ [Acámica](www.acamica.com)
+#### Goal
+The challenge was to create an interactive web app to share animated GIFs, implementing the _front-end development fundamentals_ and the use of _Javascript and Giphy API_, working with _asynchronous functions_ and native useful tools from the explorer such as obtaining images from the webcam.
 
-#### Objetivos
-El desafío consiste en la creación de una aplicación web interactiva para compartir GIFs animados, poniendo en práctica los _fundamentos de la programación_ y el uso de _JavaScript mediante la obtención de datos de la API_ de Giphy, trabajando con _asincronismo_ y aprovechando herramientas nativas del explorador como la obtención de imágenes a través de la webcam.
-
-#### Lenguajes
+#### Lenguages
 * HTML5
 * CSS3
 * Scss
 * JavaScript
 
-#### Recursos
+#### Resources
 * [VSCode](https://code.visualstudio.com/)
 * [Git](https://git-scm.com/) & [Github](https://github.com/)
 * [Google Fonts](https://fonts.google.com/)
@@ -28,10 +28,3 @@ El desafío consiste en la creación de una aplicación web interactiva para com
 * [RecordRTC](https://recordrtc.org/)
 
 
-
-
-
-
- # gifos-app
-# gifos-app
-# gifos-app
