@@ -1,20 +1,20 @@
 // ----------------------  API ----------------------  \\
 
-const apiKey = '9Kj5g3A9tVMhZr6HUCRe2zGawrHFutqZ';
+const apiKey = 'k2C4FFv1gcciej6OqcrDuZfQ1rBeiqXQ';
 
-//--endpoint para las búsquedas
+//-- search endpoint
 const searchEndpoint = 'https://api.giphy.com/v1/gifs/search';
 
-//--endpoint para los trending
+//-- trending endpoint
 const trendingEndpoint = 'https://api.giphy.com/v1/gifs/trending';
 
-//--endpoint de los tranding tags
+// trending tags endpoint
 const trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches';
 
-//--eendpoint de sugerencias de busquedas
+//-- suggestions search endpoint
 const searchAutocomplete = 'https://api.giphy.com/v1/gifs/search/tags';
 
-// --endpoint upload gif
+// -- upload gif endpoint
 const uploadGifEndpoint = 'https://upload.giphy.com/v1/gifs';
 
 const getGifByIdEndpoint = 'https://api.giphy.com/v1/gifs';

@@ -1,6 +1,6 @@
-// TODO ---------------------- GIF Actions ----------------------  \\
+// ALL ---------------------- GIF Actions ----------------------  \\
 
-// ---- Favoritear ---- \\
+// ---- Fav a gif ---- \\
 let arrFavoriteGifs = [];
 
 const addToFav = (gif, username, title) => {
@@ -15,6 +15,8 @@ const addToFav = (gif, username, title) => {
 	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
 	displayFavoriteGifs();
 };
+
+// hide other sections, reveal favorite section
 
 const displayFavoriteSection = (event) => {
 	event.preventDefault();
@@ -33,6 +35,8 @@ const displayFavoriteSection = (event) => {
 		$favContainer.classList.remove('hidden');
 	}
 };
+
+// inject favorite gifs
 
 const displayFavoriteGifs = () => {
 	$favContainer.innerHTML = '';
@@ -67,6 +71,8 @@ const displayFavoriteGifs = () => {
 
 $favoritosMenu.addEventListener('click', displayFavoriteSection);
 
+// reveal mis gifos section, hide other sections
+
 const displayMisGifosSection = (event) => {
 	event.preventDefault();
 	$misGifosSection.classList.remove('hidden');
@@ -86,6 +92,8 @@ const displayMisGifosSection = (event) => {
 	}
 };
 $misGifosMenu.addEventListener('click', displayMisGifosSection);
+
+// inject mis gifos
 
 const displayMiGifos = () => {
 	$misGifosContainer.innerHTML = '';
@@ -131,14 +139,14 @@ const displayMiGifos = () => {
 	}
 };
 
-// ---- Descargar ---- \\
+// ---- download ---- \\
 
 const downloadGif = async (url, title) => {
 	let blob = await fetch(url).then((img) => img.blob());
 	invokeSaveAsDialog(blob, title + '.gif');
 };
 
-// ---- Maximizar ---- \\
+// ---- maximize ---- \\
 
 const maximizeGif = (gif, username, title) => {
 	$maximizedGifSection.classList.remove('hidden');
@@ -197,7 +205,7 @@ const closeMaximized = () => {
 	$maximizedGifSection.classList.remove('maximizedGif');
 };
 
-// ---- Eliminar en favoritos ---- \\
+// ---- delete favorites ---- \\
 
 const removeGif = (gif) => {
 	let arrFavoriteParsed = JSON.parse(localStorage.getItem('FavoriteGifs'));
@@ -215,7 +223,7 @@ const removeGif = (gif) => {
 	}
 };
 
-// ---- Eliminar en Mis gifos ---- \\
+// ---- delete mis gifos ---- \\
 const removeMyGifos = (gif) => {
 	event.preventDefault();
 	let arrMyGifosParsed = JSON.parse(localStorage.getItem('MyGifs'));

@@ -20,7 +20,7 @@
 	<!-- styles -->
 	<link rel="stylesheet" href="styles/css/styles.css">
 
-	<title>GIFOS</title>
+	<title>GIFos</title>
 </head>
 
 <body>
@@ -31,14 +31,14 @@
 		<a class="logo__link" href="index.html" id="logoSection"><img class="logo__imagen" id="logo"
 				src="assets/logo-desktop.svg" alt="Logo"></a>
 
-		<!-- Barra de búsqueda del navbar -->
+		<!-- Navbar Search Engine -->
 		<div class="navbarSearch__container hiddenSearchBar" id="navbarSearch__container">
 			<img class="navbarSearch__btn hidden" id="navbarSearch-gray-btn" src="assets/icon-search-gray.svg" alt="">
 			<input class="navbarSearch__input" id="navbarSearch__input" type="text" placeholder="Busca GIFOS y más">
 			<img class="navbarSearch__icon" id="navbarSearch__icon" src="assets/icon-search.svg" alt="">
 			<img class="navbarSearch-close-icon hidden" id="navbarSearch-close-icon" src="assets/close.svg" alt="">
 		</div>
-		<!-- Menú -->
+		<!-- Menu -->
 		<nav class="navbar">
 			<img src="assets/burger.svg" alt="Menu hamburguesa" class="navbar__burguer" id="navbar__burger">
 
@@ -63,14 +63,14 @@
 	<!-- Main -->
 	<main class="topContainers" id="heroSection">
 
-		<!-- hero -->
+		<!-- Hero Section -->
 		<section class="heading__container">
 			<h1 class="hero__title">
 				Inspírate, busca, guarda y crea los mejores
 				<span class="aqua-text">GIFOS</span>
 			</h1>
 
-			<!-- Barra buscadora del hero -->
+			<!-- Hero Search Bar -->
 			<div class="search">
 				<img class="ilustra-header" src="assets/ilustra_header.svg" alt="" />
 
@@ -82,14 +82,14 @@
 				</div>
 			</div>
 
-			<!-- Recomendaciones de búsqueda -->
+			<!-- Search Suggestions -->
 			<div class="SearchSuggestions__container hidden" id="searchSuggestions__container">
 				<hr class="suggestions-line">
 				<ul class="search-sugestion-list" id="search-sugestion-list">
 				</ul>
 			</div>
 
-			<!-- Trending tags -->
+			<!-- Trending Tags -->
 			<section class="hero__trending">
 				<h4 class="hero__subtitle">Trending:</h4>
 
@@ -99,7 +99,7 @@
 			</section>
 		</section>
 
-		<!-- Resultados de la búsqueda -->
+		<!-- Search Results Section -->
 		<section class="searchResult hidden" id="searchResult">
 
 			<hr class="search-line">
@@ -107,7 +107,8 @@
 			<div class="errorContainer" id="error-container"></div>
 			<div class="searchResult__gallery" id="searchResult_gallery">
 
-				<!-- Acá van a aparecer los gifs buscados -->
+				<!-- Gifs Search Injection DIV -->
+
 			</div>
 
 			<a href="" class="button hidden" id="verMas-btn">VER MÁS</a>
@@ -115,13 +116,13 @@
 	</main>
 
 
-	<!-- Gif Maximizado -->
+	<!-- Gif Maximized -->
 
 	<div class="hidden" id="maximizedGif">
 
 	</div>
 
-	<!-- Favoritos -->
+	<!-- Favorites -->
 	<section class="topContainers hidden" id="favorites-section">
 
 		<img src="assets/icon-favoritos.svg" alt="Imagen decorativa">
@@ -135,13 +136,13 @@
 
 		<div class="searchResult">
 			<div class="searchResult__gallery hidden" id="fav-container">
-				<!-- Acá van a aparecer los gifs favoriteados -->
+				<!-- Gifs Favorites Injection DIV -->
 			</div>
 		</div>
 
 	</section>
 
-	<!-- Mis gifs -->
+	<!-- My Gifs -->
 	<section class="topContainers hidden" id="misGifosSection">
 
 		<img src="assets/icon-mis-gifos.svg" alt="Imagen decorativa">
@@ -154,52 +155,52 @@
 
 		<div class="searchResult">
 			<div class="searchResult__gallery" id="misGifos-container">
-				<!-- Acá van a aparecer los gifs creados y subidos a gifos -->
+				<!-- My Gifs Injection DIV -->
 			</div>
 		</div>
 
 	</section>
 
-	<!-- Crear gifs -->
+	<!-- Create Gifs -->
 	<div class="crearGif hidden" id="createGifSection">
 
 		<div class="crearGif__container">
 
-			<!-- cámara -->
+			<!-- WebCam -->
 			<div class="crearGif__camara">
 				<img id="camera" src="assets/camara.svg" alt="cámara filmadora ilustrativa">
 				<img class="path" id="path" src="assets/element-luz-camara.svg" alt="luz de camara filmadora">
 			</div>
 
-			<!-- recuadro de grabación -->
+			<!-- film frame -->
 			<div class="crearGif__recordingZone">
 
-				<!-- bordes para estilos -->
+				<!-- style borders -->
 				<div class="corner top--left"></div>
 				<div class="corner top--right"></div>
 				<div class="corner bottom--left"></div>
 				<div class="corner bottom--right"></div>
 
 
-				<!-- recuadro de grabación -->
+				<!-- filming frame -->
 				<div class="crearGif__recordingZone__content">
 
-					<!-- !TIENE HIDDEN -->
+					<!-- !Has HIDDEN -->
 					<h3 class="crearGif__title" id="crearGif_title">Aquí podrás <br> crear tus propios <span
 							class="aqua-text">GIFOS</span> </h3>
-					<!-- !TIENE HIDDEN -->
+					<!-- !Has HIDDEN -->
 					<p class="crearGif__text" id="crearGif_text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas
 						una
 						cámara para grabar un video)</p>
 
-					<!-- PARA QUE EL VIDEO SE ACOMODE ACA MIENTRAS GRABA -->
+					<!-- Video while filming -->
 
 					<video class="recording_video hidden" src="" id="recording_video"></video>
 
 					<!-- VER SI CONVIENE METER EL GIF DESDE ACA O HACER UNA FUNCION DE TEMPLATE -->
 					<img class="recorded_video hidden" src="" id="recorded_gifo" ></img>
 
-					<!-- !TIENE HIDDEN -->
+					<!-- !has HIDDEN -->
 					<div class="overlay" id="overlay">
 
 						<div class="overlay__status-container" id="overlay-status-container">
@@ -214,7 +215,7 @@
 
 				</div>
 			</div>
-			<!-- celuloide -->
+			<!-- celuloid -->
 
 			<div class="crearGif__celluloidFilm">
 				<img class="celuloide" id="celuloide" src="assets/pelicula.svg" alt="celuloide ilustracion">
@@ -234,10 +235,10 @@
 			<a href="" class="timer__repeatShot timer__text hidden" id="repeatShot">REPETIR CAPTURA</a>
 		</div>
 
-		<!-- linea decorativa -->
+		<!-- decorative line -->
 		<hr class="border">
 
-		<!-- botones -->
+		<!-- buttons -->
 		<div class="button__container">
 			<a class="button" id="button--comenzar">COMENZAR</a>
 			<a class="button" id="button--grabar">GRABAR</a>
@@ -247,29 +248,26 @@
 	</div>
 
 
-
-
-
-	<!-- Trending -->
+	<!-- Trending Section -->
 	<section class="trending" id="trendingSection">
 		<h2 class="trending__title">Trending GIFOS</h2>
 		<p class="trending__paragraph">Mira los últimos GIFOS de nuestra comunidad</p>
 
 		<div class="trending__container">
-			<!-- flecha -->
+			<!-- previous arrow -->
 			<div class="previous-btn arrows">
 				<img src="assets/button-slider-left.svg" alt="Flecha Previous" id="previous-btn">
 			</div>
 
-			<!-- trending gif slider -->
+			<!-- Trending Gif Slider/Carousel -->
 			<div class="trending__slider--container">
 				<div class="trending__slider" id="trending__slider">
 
-					<!-- acá van a aparecer los trending -->
+					<!-- Trending Gifs Injection DIV -->
 				</div>
 			</div>
 
-			<!-- flecha -->
+			<!-- next arrow -->
 			<div class="next-btn arrows">
 				<img src="assets/Button-Slider-right.svg" alt="Flecha Next" id="next-btn">
 			</div>
@@ -291,6 +289,8 @@
 		<p class="footer__paragraph">© GIFOS 2020 All Rights Reserved.</p>
 
 	</footer>
+
+	<!-- JS CODE SCRIPTS -->
 
 	<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 	<script src="js/dom.js"></script>

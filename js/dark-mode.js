@@ -3,7 +3,8 @@
 const switchTheme = () => {
 	document.body.classList.toggle('darkMode');
 
-	// Guarda la elección en el localStorage
+	// saves in localstorage
+
 	if (document.body.classList.contains('darkMode')) {
 		localStorage.setItem('dark-mode', true);
 	} else {
@@ -13,7 +14,7 @@ const switchTheme = () => {
 
 $switchThemeBtn.addEventListener('click', switchTheme);
 
-// consulta cual es el modo elegido y setea las propiedades nocturnas
+// asks chosen mode and sets dark properties
 const setLocalStorageTheme = () => {
 	if (localStorage.getItem('dark-mode') == 'true') {
 		document.body.classList.add('darkMode');

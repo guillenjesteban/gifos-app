@@ -47,13 +47,13 @@ let blob;
 let form = new FormData();
 let arrMyGifos = [];
 
-// seteo del timer
+// timer set
 let timer;
 let hours = '00';
 let minutes = '00';
 let seconds = '00';
 
-// TODO función que ejecuta la cámara y se setea la API
+// all functions cam executes and sets API back
 const getStreamAndRecord = async () => {
 	$crearGifTitle.innerHTML = `¿Nos das acceso <br> a tu cámara?`;
 	$crearGifText.innerHTML = `El acceso a tu camara será válido sólo <br> por el tiempo en el que estés creando el GIFO.`;
@@ -92,10 +92,10 @@ const getStreamAndRecord = async () => {
 		.catch((err) => console.log(err));
 };
 
-// Cuando clickea comenzar, se ejecuta la cámara y se setea la API
+// Click start, execute camera and sets API
 $buttonComenzar.addEventListener('click', getStreamAndRecord);
 
-// TODO función para empezar
+// Start function
 const createGifo = () => {
 	console.log('está grabando');
 	$buttonGrabar.style.display = 'none';
@@ -108,7 +108,7 @@ const createGifo = () => {
 
 $buttonGrabar.addEventListener('click', createGifo);
 
-// TODO función para parar la grabación
+// Stop Filming
 const stopCreatingGif = () => {
 	$video.classList.add('hidden');
 	$recordedGifo.classList.remove('hidden');
@@ -125,7 +125,7 @@ const stopCreatingGif = () => {
 	$timer.classList.add('hidden');
 	$repeatBtn.classList.remove('hidden');
 
-	// acá debería limpiar y volver a setear el cronómetro
+	// set chron to 0
 	clearInterval(timer);
 	hours = '00';
 	minutes = '00';
@@ -135,7 +135,7 @@ const stopCreatingGif = () => {
 
 $buttonFinalizar.addEventListener('click', stopCreatingGif);
 
-// TODO función para subir a Giphy y almacenar el gif en Mis gifos
+// upload and save gif to my gifos
 const uploeadCreatedGif = async () => {
 	$overlay.style.display = 'flex';
 	$step2.classList.remove('step-active');
@@ -173,7 +173,8 @@ const uploeadCreatedGif = async () => {
 
 $buttonSubirGif.addEventListener('click', uploeadCreatedGif);
 
-// TODO función para repetir
+// repeat function
+
 const repeatRecordingGif = (event) => {
 	event.preventDefault();
 	recorder.clearRecordedData();
@@ -210,7 +211,7 @@ const repeatRecordingGif = (event) => {
 };
 $repeatBtn.addEventListener('click', repeatRecordingGif);
 
-// TODO función para descargar el gif creado
+// download created gif
 const downloadCreatedGif = async (myGifId) => {
 	let blob = await fetch(
 		`https://media.giphy.com/media/${myGifId}/giphy.gif`
@@ -218,7 +219,7 @@ const downloadCreatedGif = async (myGifId) => {
 	invokeSaveAsDialog(blob, 'My-Gif.gif');
 };
 
-// TODO función para el timer
+// set timer
 function timerActive() {
 	seconds++;
 

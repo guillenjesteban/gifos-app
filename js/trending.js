@@ -1,5 +1,5 @@
-// TODO ---------------------- Trending Styles ----------------------  \\
-// Setea los botones previo y next, de acuerdo al estado y al theme elegido
+// ALL ---------------------- Trending Styles ----------------------  \\
+// Sets previous and next btns, according to mouse state and theme
 const setTrendingBtn = () => {
 	if (localStorage.getItem('dark-mode') === 'true') {
 		$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
@@ -21,9 +21,11 @@ $nextBtn.addEventListener('mouseover', () => {
 $previousBtn.addEventListener('mouseout', setTrendingBtn);
 $nextBtn.addEventListener('mouseout', setTrendingBtn);
 
-// TODO ---------------------- Trending API ----------------------  \\
+// ALL ---------------------- Trending API ----------------------  \\
 
-// TODO ------- Trending TAGS
+// ALL ------- Trending TAGS
+
+// fetch ----- get trending tags info from API
 
 const getTrendingTags = async () => {
 	await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
@@ -36,6 +38,8 @@ const getTrendingTags = async () => {
 };
 
 getTrendingTags();
+
+// show trending tags INFO
 
 const displayTrendingTags = (trendingTags) => {
 	for (let i = 0; i < 6; i++) {
@@ -50,7 +54,9 @@ const displayTrendingTags = (trendingTags) => {
 	}
 };
 
-// TODO ------- Trending SLIDER
+// ALL ------- Trending SLIDER
+
+// fetch------ get info from API
 const getTrendingGif = async () => {
 	await fetch(`${trendingEndpoint}?api_key=${apiKey}&limit=12&rating=g`)
 		.then((response) => response.json())
@@ -62,6 +68,8 @@ const getTrendingGif = async () => {
 };
 
 getTrendingGif();
+
+// show info from API
 
 const displayTrendingGifs = (results) => {
 	for (let i = 0; i < results.data.length; i++) {
@@ -85,6 +93,8 @@ const displayTrendingGifs = (results) => {
 		$trendingSlider.appendChild(gifContainer);
 	}
 };
+
+// arrows function and events
 
 const nextSliderBtn = () => {
 	$trendingSlider.scrollLeft += 400;

@@ -1,8 +1,8 @@
-// TODO ---------------------- Búsqueda ----------------------  \\
+// ALL ---------------------- search ----------------------  \\
 
 let offsetSearch = 0;
 
-// --- Busqueda de gifs
+// --- gif search
 const getSearch = async (search) => {
 	event.preventDefault();
 	cleanSearchSuggestions();
@@ -10,12 +10,12 @@ const getSearch = async (search) => {
 	$navbarSearchInput.value = search;
 	$searchTitle.innerHTML = search;
 
-	// si el offset está en 0, limpia la galería de gif
+	// offset = 0, clean gallery of gifs
 	if (offsetSearch === 0) {
 		$searchResultGallery.innerHTML = '';
 	}
 
-	//-----------fetch
+	//-----------fetch, bring gifs from API
 	await fetch(
 		`${searchEndpoint}?api_key=${apiKey}&q=${search}&offset=${offsetSearch}&limit=12&rating=g`
 	)
@@ -30,7 +30,7 @@ const getSearch = async (search) => {
 		.catch((err) => console.log(err));
 };
 
-// --- Mostrar gif
+// --- show gif
 const displaySearchGif = (results) => {
 	$searchResultContainer.classList.remove('hidden');
 	$verMasbtn.classList.remove('hidden');
@@ -42,6 +42,8 @@ const displaySearchGif = (results) => {
 	if (results.data.length < 12) {
 		$verMasbtn.style.display = 'none';
 	}
+
+	// inject GIFS
 
 	for (let i = 0; i < results.data.length; i++) {
 		const gifContainer = document.createElement('div');
@@ -65,7 +67,7 @@ const displaySearchGif = (results) => {
 	}
 };
 
-// --- Mostrar mensaje de error de búsqueda
+// --- search error display
 const displayErrorSearch = () => {
 	$searchResultContainer.classList.remove('hidden');
 	$errorContainer.classList.remove('hidden');
@@ -78,7 +80,8 @@ const displayErrorSearch = () => {
 	$verMasbtn.style.display = 'none';
 };
 
-// --- Cada vez que se clickee en el botón Ver más, el offset suma 12 gifs más y se vuelve a ejecutar el fetch.
+// --- see more btn, + 12 gifs
+
 const verMasButton = () => {
 	offsetSearch += 12;
 	if ($searchInputHero.value) {
@@ -88,7 +91,9 @@ const verMasButton = () => {
 	}
 };
 
-// TODO--------------- Search Suggestions --------------- \\
+// ALL--------------- Search Suggestions --------------- \\
+
+// fetch------ get info from API
 
 const getSearchSuggestions = async () => {
 	cleanSearchSuggestions();
@@ -109,6 +114,8 @@ const getSearchSuggestions = async () => {
 	}
 };
 
+// show and inject info from API
+
 const displaySuggestions = (suggestions) => {
 	for (let i = 0; i < suggestions.data.length; i++) {
 		const searchSuggestionItem = document.createElement('li');
@@ -121,7 +128,7 @@ const displaySuggestions = (suggestions) => {
 	}
 };
 
-// --- Vuelve los seteos del contenedor a la configuración inicial
+// --- original settings
 const cleanResultsContianer = () => {
 	$searchResultContainer.classList.add('hidden');
 	$errorContainer.classList.add('hidden');
@@ -131,13 +138,13 @@ const cleanResultsContianer = () => {
 	$searchInputHero.placeholder = 'Busca GIFOS y más';
 };
 
-// Limpia las sugerencias de búsqueda
+// clean search suggestions
 const cleanSearchSuggestions = () => {
 	$searchSuggestionList.classList.add('hidden');
 	$searchSuggestionList.innerHTML = '';
 };
 
-// --- Seteos para cuando el buscador está activo
+// --- active search
 const setActiveSearchBar = () => {
 	$searchGrayBtn.classList.remove('hidden');
 	$searchCloseBtn.classList.remove('hidden');
@@ -153,8 +160,8 @@ const setActiveNavbarSearch = () => {
 	$navbarSearchBtn.classList.add('hidden');
 };
 
-// --- Seteos para cuando el buscador está inactivo
-// Resetea contendeores, valores de los inputs y cambia cruz por lupa.
+// --- inactive search
+
 const setInactiveSearchBar = () => {
 	$navbarSearchInput.value = '';
 	$searchInputHero.value = '';
@@ -176,9 +183,9 @@ const setInactiveNavbarSearch = () => {
 	$navbarSearchGrayBtn.classList.add('hidden');
 };
 
-// ---------- EVENTOS
+// ---------- EVENTS
 
-// --- Eventos de la búsqueda en HERO
+// --- HERO Search events
 $searchGrayBtn.addEventListener('click', () => {
 	getSearch($searchInputHero.value);
 });
@@ -195,7 +202,7 @@ $searchInputHero.addEventListener('input', cleanResultsContianer);
 $searchCloseBtn.addEventListener('click', setInactiveSearchBar);
 $verMasbtn.addEventListener('click', verMasButton);
 
-// --- Eventos de la búsqueda en NAVBAR
+// --- NAVBAR Search Events
 $navbarSearchGrayBtn.addEventListener('click', () => {
 	getSearch($navbarSearchInput.value);
 });
