@@ -4,7 +4,7 @@ _________________________
 ### Interactive Web App to share animated GIFS.
 <br>
 
-[Demo Link](https://gifos-agostina.netlify.app/)
+[Demo Link](https://appgifos.netlify.app/)
 
 #### End project from Javascript Unit.
 
