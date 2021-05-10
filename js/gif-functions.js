@@ -10,11 +10,17 @@ const addToFav = (gif, username, title) => {
 		gif: gif
 	};
 
-	arrFavoriteGifs.push(objGif);
 
-	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
-	displayFavoriteGifs();
+	// no double liking conditional
+	
+	if ((arrFavoriteGifs.filter(obj => obj.gif === gif)).length === 0) {
+		arrFavoriteGifs.push(objGif);
+		localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
+		displayFavoriteGifs();
+	}
+
 };
+
 
 // hide other sections, reveal favorite section
 
